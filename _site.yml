@@ -1,8 +1,0 @@
-name: "Пельмени"
-navbar:
-  title: "Пельмени"
-  left:
-    - text: "О проекте"
-      href: index.html
-    - text: "Карты"
-      href: maps.html
