@@ -1,0 +1,14 @@
+---
+title: "О проекте"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Описание проекта
+
+
+Здесь можно написать какое-нибудь описание.

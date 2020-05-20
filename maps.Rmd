@@ -1,0 +1,58 @@
+---
+title: "Карты"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Форма пельменей
+
+
+Здесь можно написать какое-нибудь описание.
+
+```{r, include=FALSE, echo=FALSE}
+library(lingtypology)
+library(leaflet)
+
+df <- data.frame(language = c("Tatar", "Bashkir", "Russia Buriat", "Abaza"),
+                 features = c("свернутые конвертики", "свернутые конвертики", "конверты-полумесяцы", "с хвостиком"),
+                 pictures = c("http://xcook.info/sites/default/files/recipe/3/yufahash-7.jpeg", "http://www.bashkirskayakuhnya.com/wp-content/gallery/bluda/004.jpg", "https://baikal-ayan.ru/ssl/u/77/b8a040030f11eaa88b9dd661e6e24a/-/%D0%9F%D0%BE%D0%B7%D1%8B.jpg", "https://img11.postila.ru/resize?w=640&src=%2Fdata%2F41%2F90%2F72%2Fbf%2F419072bf33d82c0f2ba10e158b64ce4976e7144a2c5bb30f10ae1563214a8e02.jpg")
+                 )
+df$pictures <- paste("<img src='",
+                       as.character(df$pictures),
+                       "'></img>", sep = "")
+```
+
+
+```{r, echo=FALSE}
+map.feature(languages = df$language,
+            features = df$features,
+            popup = df$pictures,
+            width = 7,
+            title = "Форма пельменей")
+
+```
+
+
+### Ингредиенты теста пельменей
+### Начинка пельменей
+
+### С чем подают
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
