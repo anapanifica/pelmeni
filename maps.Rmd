@@ -1,0 +1,58 @@
+---
+title: "Карты"
+output:
+  html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Форма пельменей
+
+
+Здесь можно написать какое-нибудь описание.
+
+```{r, include=FALSE, echo=FALSE}
+library(lingtypology)
+library(leaflet)
+
+
+df <- read.csv("Пельмени - csv.csv")
+df$photo <- paste("<img src='",
+                       as.character(df$photo),
+                       "'></img>", sep = "")
+df
+```
+
+
+```{r, echo=FALSE}
+map.feature(languages = df$language,
+            features = df$form,
+            popup = df$photo,
+            width = 7,
+            title = "Форма пельменей")
+
+```
+
+
+### Ингредиенты теста пельменей
+### Начинка пельменей
+
+### С чем подают
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

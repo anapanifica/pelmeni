@@ -1,0 +1,35 @@
+---
+title: "Данные"
+output:
+  html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r, include=FALSE, echo=FALSE}
+library(lingtypology)
+library(leaflet)
+library(DT)
+library(tidyverse)
+
+df <- read.csv("Пельмени - csv.csv")
+```
+
+#### Семья, перевод, форма, средний размер, способ приготовления
+```{r, echo=FALSE}
+df %>%
+  select(2:6, 8, 11) -> df1
+datatable(df1, filter = 'top', options = list(autoWidth = TRUE))
+```
+
+
+#### Комментарии
+```{r, echo=FALSE}
+df %>%
+  select(2:4, 13) -> df2
+datatable(df2, filter = 'top', options = list(autoWidth = TRUE))
+```
