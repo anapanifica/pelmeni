@@ -19,6 +19,9 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
@@ -248,6 +251,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -255,6 +321,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -300,14 +376,29 @@ $(document).ready(function () {
 </div>
 
 
-<p><img src="pelmeni-google.png" /></p>
-<div id="участники" class="section level4">
-<h4>Участники</h4>
-<p>Полина Артемьева, Федор Голосов, Сара Задыкян, Анастасия Панова</p>
-</div>
-<div id="аннотация" class="section level4">
-<h4>Аннотация</h4>
+<p><em>Полина Артемьева, Федор Голосов, Сара Задыкян, Анастасия Панова</em></p>
+<div id="введение" class="section level3">
+<h3>Введение</h3>
 <p>Практически у каждого народа России есть свой вариант приготовления пельменей, причем нередко его преподносят как национальное блюдо. В рамках этого проекта мы хотим сравнить рецепты приготовления пельменей у разных народов России, выявить основные сходства и различия, а затем на основе классификации существующих рецептов посмотреть, как соотносятся особенности рецептуры пельменей с генеалогией народов России и с географией их расселения.</p>
+<div id="сравнительный-концепт-пельменя-и-вареника-на-материале-народов-россии" class="section level4">
+<h4>Сравнительный концепт пельменя и вареника на материале народов России</h4>
+<p>Прежде чем сравнивать рецепты приготовления пельменей и вареников, распространённые у разных народов России, нам необходимо определиться с тем, что именно мы понимаем под пельменями и под варениками, то есть что именно включать в рассмотрение для типологического обзора. В словаре Ожегова вареники определяются как «Род маленьких пирожков из пресного теста, начинённых творогом, ягодами, употр. в варёном виде», а пельмени определяются как «род маленьких пирожков из пресного теста с мясной начинкой, употр. в варёном виде». Очень похожие определение даёт и другой авторитетный источник – словарь Ушакова. Таким образом, опираясь на такие базовые определения, пельменями или варениками можно назвать любой вид маленьких пирожков из теста с начинкой из мяса, творога или ягод, только пельмени обычно мясные, а вареники – обычно из творога или ягод. В словаре Похлёбкина, посвящённого кулинарным терминам, понятия пельменя и вареника определяются более детально. Так, в частности, вареники могут обладать, помимо творожной, также картофельной, луковой, капустной, грибной и фруктовой начинкой. Пельмени, однако, по-прежнему определяются как исключительно мясное блюдо. Стоит ещё отметить, что пельмени и вареники отличаются по крайней мере прототипически формой и размером: пельмени скорее напоминают маленькие шарики с бортиком по окружности, а вареники – вытянутые объёмные «кошельки» с ребристым бортиком-гребешком. К сожалению, при обращении к конкретным кухням малых народов России оказывается, что эти ограничения работают нестрого, и граница между вареником и пельменем оказывается очень условной. Например, удмуртские пельмени – пельняни – бывают не только с мясной, но и с овощной и даже ягодной и творожной начинкой, а бурятские буузы значительно превосходят пельмени по размеру, больше напоминая грузинские хинкали. Таким образом, учитывая как условность самих понятий пельменя и вареника, так и условность их границы, мы решили включить в рассмотрение любые относительно маленькие варёные пирожки из тонкого варёного теста.</p>
+</div>
+</div>
+<div id="обзор-литературы" class="section level3">
+<h3>Обзор литературы</h3>
+</div>
+<div id="методология" class="section level3">
+<h3>Методология</h3>
+</div>
+<div id="анализ" class="section level3">
+<h3>Анализ</h3>
+</div>
+<div id="результаты" class="section level3">
+<h3>Результаты</h3>
+</div>
+<div id="заключение" class="section level3">
+<h3>Заключение</h3>
 </div>
 
 <br>
@@ -315,6 +406,8 @@ $(document).ready(function () {
 <p> <center> Проект по МАГОЛЕГО "Языки, мифология и искусство народов России" (НИУ ВШЭ), 2020 </center></p>
 
 
+</div>
+</div>
 
 </div>
 
@@ -347,6 +440,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
